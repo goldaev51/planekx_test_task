@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block extra_css %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/login_styles.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="centered-container">
+        <h1 class="text-center">Login</h1>
+        <form method="post" class="mx-auto text-center">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-primary">Login</button>
+        </form>
+    </div>
+{% endblock %}
